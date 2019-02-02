@@ -1,0 +1,66 @@
+
+settingsskin.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+active
+  rotate: false
+  xy: 24, 270
+  size: 46, 153
+  orig: 46, 153
+  offset: 0, 0
+  index: -1
+btn2
+  rotate: false
+  xy: 24, 425
+  size: 308, 68
+  orig: 308, 68
+  offset: 0, 0
+  index: -1
+btn2-down
+  rotate: false
+  xy: 24, 495
+  size: 308, 68
+  orig: 308, 68
+  offset: 0, 0
+  index: -1
+button
+  rotate: false
+  xy: 334, 470
+  size: 166, 93
+  split: 1, 1, 1, 1
+  pad: 42, 42, 30, 30
+  orig: 166, 93
+  offset: 0, 0
+  index: -1
+button-down
+  rotate: false
+  xy: 334, 440
+  size: 50, 28
+  split: 0, 0, 0, 0
+  pad: 14, 14, 10, 10
+  orig: 50, 28
+  offset: 0, 0
+  index: -1
+close
+  rotate: false
+  xy: 502, 527
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+separator-horizontal
+  rotate: false
+  xy: 2, 565
+  size: 1099, 20
+  orig: 1099, 20
+  offset: 0, 0
+  index: -1
+separator-vertical
+  rotate: false
+  xy: 2, 2
+  size: 20, 561
+  orig: 20, 561
+  offset: 0, 0
+  index: -1
