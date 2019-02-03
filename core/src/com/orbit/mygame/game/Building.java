@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 
-public class Building {
+public abstract class Building {
     Sprite imageSprite;
 
     int gridspaceX;
@@ -15,6 +15,10 @@ public class Building {
 
     int inventarSlots;
     int upgradeSlots;
+
+    public Building(){
+
+    }
 
     public Building(Texture tex, int gridspaceX, int gridspaceY, int posX, int posY){
         this.imageSprite = new Sprite(tex);
