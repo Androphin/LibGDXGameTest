@@ -3,6 +3,7 @@ package com.orbit.mygame.ui;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Interpolation;
+import com.badlogic.gdx.scenes.scene2d.Event;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
@@ -82,6 +83,15 @@ public class WelcomeWindow extends Table {
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 //how to trigger event for slide-in animation on RegisterWindow object? registerWindow.slideIn();
                 //working with a reference? what programing technique/design?
+
+                event.getTarget().getParent().findActor("registerWindow").moveBy(100,200);
+                event.getStage().getRoot().findActor("registerWindow").getActions().first().restart();
+                //add a new action instead of calling the function
+                event.getStage().getRoot().findActor("registerWindow").addAction(new SequenceAction(Actions.moveTo(200, 200, 0.5f)));
+                //the actor implements a listener and gets notified if I click the button
+                event.getTarget().getStage().getRoot().findActor("registerWindow").notify(new Event ?);
+                //direct function call. but how it would be possible?
+                //registerWindow.slideIn()
                 this.cancel();
             }
         });
