@@ -31,6 +31,8 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.orbit.mygame.MyGame;
 import com.orbit.mygame.GUI;
 import com.orbit.mygame.ui.RegisterWindow;
+import com.orbit.mygame.ui.SettingsWindow;
+import com.orbit.mygame.ui.WelcomeWindow;
 
 public class MainScreen implements Screen {
 
@@ -56,6 +58,7 @@ public class MainScreen implements Screen {
 
 	boolean showRegisterWindow = false;
 	RegisterWindow registerWindow;
+	WelcomeWindow welcomeWindow;
 
 	Pixmap blackScreenPixmap;
 	Image blackScreen;
@@ -123,7 +126,7 @@ public class MainScreen implements Screen {
 		setupListeners();
 
         Table widgetsTable = new Table(gui.getSkin());
-        //widgetsTable.setDebug(true);
+        widgetsTable.setDebug(true);
         widgetsTable.pad(20f);
         widgetsTable.row().height(120);
         widgetsTable.add("Profil Preview").expandX();
@@ -159,13 +162,16 @@ public class MainScreen implements Screen {
         //gui.getLayer(1).addActor(menuRootTable);
 
         //Settings Window
-		//SettingsWindow settingsWindow = new SettingsWindow(skinSettings, this.app.language);
+		//SettingsWindow settingsWindow = new SettingsWindow(gui.getSkin(), this.app.language);
 		//size to screensize
 		//position outside cam
-		//stage.addActor(settingsWindow);
+		//gui.getStage().addActor(settingsWindow);
 
 		//stage.addActor(blackScreen);
 
+		welcomeWindow = new WelcomeWindow(app.actionCtrl, gui.getSkin(), app.language);
+		welcomeWindow.setPosition(0, -app.constants.VIRTUAL_SCREEN_HEIGTH );
+		gui.getStage().addActor(welcomeWindow);
 		registerWindow = new RegisterWindow(app.actionCtrl, gui.getSkin(), app.language);
 		registerWindow.setPosition(0, -app.constants.VIRTUAL_SCREEN_HEIGTH );
 		gui.getStage().addActor(registerWindow);
