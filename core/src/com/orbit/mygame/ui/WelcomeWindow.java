@@ -80,8 +80,8 @@ public class WelcomeWindow extends Table {
         btnCreateAccount.addListener(new ClickListener(){
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-                //how to trigger event for slide-in animation on RegisterWindow?
-                //?????
+                //how to trigger event for slide-in animation on RegisterWindow object? registerWindow.slideIn();
+                //working with a reference? what programing technique/design?
                 this.cancel();
             }
         });

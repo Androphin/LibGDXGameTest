@@ -31,7 +31,6 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.orbit.mygame.MyGame;
 import com.orbit.mygame.GUI;
 import com.orbit.mygame.ui.RegisterWindow;
-import com.orbit.mygame.ui.SettingsWindow;
 import com.orbit.mygame.ui.WelcomeWindow;
 
 public class MainScreen implements Screen {
@@ -56,7 +55,7 @@ public class MainScreen implements Screen {
 	ModelInstance pigmentsInstance;
 	Environment environment;
 
-	boolean showRegisterWindow = false;
+	boolean showWelcomeWindow = false;
 	RegisterWindow registerWindow;
 	WelcomeWindow welcomeWindow;
 
@@ -126,7 +125,7 @@ public class MainScreen implements Screen {
 		setupListeners();
 
         Table widgetsTable = new Table(gui.getSkin());
-        widgetsTable.setDebug(true);
+        //widgetsTable.setDebug(true);
         widgetsTable.pad(20f);
         widgetsTable.row().height(120);
         widgetsTable.add("Profil Preview").expandX();
@@ -147,6 +146,7 @@ public class MainScreen implements Screen {
 			mainMenuTable.add(btnCredits);
 		}else{
 			mainMenuTable.add(btnRegister);
+			showWelcomeWindow = true;
 		}
 
 		Table menuRootTable = new Table(gui.getSkin());
@@ -178,11 +178,11 @@ public class MainScreen implements Screen {
 		//gui.getLayer(1).addActor(registerWindow);
 
 		//Register Form
-		if(showRegisterWindow){
+		if(showWelcomeWindow){
 			//fade background to 80% black
 			blackScreen.addAction(new SequenceAction(Actions.alpha(0.8f, 0.5f)));
 			//fadein form
-
+			welcomeWindow.slideIn();
 		}else{
 			blackScreen.addAction(new SequenceAction(Actions.alpha(0f, 0.8f)));
 		}
